@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const recipes = require('../train.json');
+const recipes = require('./train.json');
 
 const app = express();
 const PORT = 3000;
@@ -14,6 +14,10 @@ function generateYouTubeLink(ingredients) {
   const query = encodeURIComponent(`recipe with ${ingredients.slice(0, 3).join(' ')}`);
   return `https://www.youtube.com/results?search_query=${query}`;
 }
+
+app.get("/", (req, res) => {
+  response.send("Welcome to my app")
+});
 
 app.post('/recipes', (req, res) => {
   const { ingredients } = req.body;
