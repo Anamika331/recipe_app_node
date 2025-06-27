@@ -16,7 +16,7 @@ function generateYouTubeLink(ingredients) {
 }
 
 app.get("/", (req, res) => {
-  response.send("Welcome to my app")
+  res.send("Welcome to my app")
 });
 
 app.post('/recipes', (req, res) => {
